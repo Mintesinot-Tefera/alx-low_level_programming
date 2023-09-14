@@ -2,12 +2,12 @@
 /**
  * print_alphabet_x10-prints lowercase alphabets 10 times
  */
-void print_alphabet_x10(void)
-{  
-    int i;
-    char ch;
+void print_alphabet_x10 (void)
+{
+int i;
+char ch;
 
-    i = 0;
+i = 0;
 
     while (i < 10)
 	{
@@ -20,4 +20,4 @@ void print_alphabet_x10(void)
 		_putchar('\n');
 		i++;
       }
- }
+}
