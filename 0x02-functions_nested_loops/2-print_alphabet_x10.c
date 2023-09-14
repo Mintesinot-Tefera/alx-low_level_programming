@@ -3,7 +3,7 @@
  * print_alphabet_x10-prints lowercase alphabets 10 times
  */
 void print_alphabet_x10(void)
-{   
+{  
     int i;
     char ch;
 
@@ -19,5 +19,5 @@ void print_alphabet_x10(void)
 		}
 		_putchar('\n');
 		i++;
-      } 
- } 
+      }
+ }
