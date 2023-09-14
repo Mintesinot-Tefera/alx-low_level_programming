@@ -2,7 +2,7 @@
 /**
  * main-print putchar followed by a new line
  * is written by me
- * Return :always 0
+ * Return: 0
  */
 
 int main(void)
