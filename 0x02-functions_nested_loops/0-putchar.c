@@ -1,5 +1,5 @@
-#include "main.h" 
-int main(void) 
+#include "main.h"
+int main(void)
 {
 
 _putchar('_');
