@@ -1,34 +1,40 @@
 #include "lists.h"
 
 /**
- * find_listint_loop - finds the loop in a linked list
- * @head: linked list to search for
+ * delete_nodeint_at_index - deletes a node in a linked list at a certain index
+ * @head: pointer to the first element in the list
+ * @index: index of the node to delete
  *
- * Return: address of the node where the loop starts, or NULL
+ * Return: 1 (Success), or -1 (Fail)
  */
-listint_t *find_listint_loop(listint_t *head)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *slow = head;
-	listint_t *fast = head;
+	listint_t *temp = *head;
+	listint_t *current = NULL;
+	unsigned int i = 0;
 
-	if (!head)
-		return (NULL);
+	if (*head == NULL)
+		return (-1);
 
-	while (slow && fast && fast->next)
+	if (index == 0)
 	{
-		fast = fast->next->next;
-		slow = slow->next;
-		if (fast == slow)
-		{
-			slow = head;
-			while (slow != fast)
-			{
-				slow = slow->next;
-				fast = fast->next;
-			}
-			return (fast);
-		}
+		*head = (*head)->next;
+		free(temp);
+		return (1);
 	}
 
-	return (NULL);
+	while (i < index - 1)
+	{
+		if (!temp || !(temp->next))
+			return (-1);
+		temp = temp->next;
+		i++;
+	}
+
+
+	current = temp->next;
+	temp->next = current->next;
+	free(current);
+
+	return (1);
 }
